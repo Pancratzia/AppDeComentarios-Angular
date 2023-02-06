@@ -1,0 +1,72 @@
+<br>
+<div class="container">
+    <!--Titulo de noticia-->
+    <div class="card">
+        <div class="card-content">
+            <p class="title has-text-justified">
+                “Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt, nemo impedit tempore ipsum consectetur illo saepe sequi ullam.
+                Omnis provident laboriosam natus voluptatum totam id officiis at accusantium nesciunt suscipit. ”
+            </p>
+            <p class="subtitle">
+                Laura Ortega
+            </p>
+        </div>
+        <footer class="card-footer">
+            <p class="card-footer-item">
+                <span>
+                    Más en <a class="" href="https://github.com/Pancratzia">GitHub</a>
+                </span>
+            </p>
+        </footer>
+    </div>
+    <br>
+    <!--comentarios-->
+    <article class="media" *ngFor="let c of comentarios; let num = index;">
+        <figure class="media-left">
+            <p class="image is-64x64">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png">
+            </p>
+        </figure>
+        <div class="media-content">
+            <div class="content">
+                <p>
+                    <strong>{{ c.nombre }}</strong>
+                    <br>
+                    {{ c.comentario }}
+                </p>
+            </div>
+        </div>
+        <div class="media-right">
+            <button class="delete" (click) = "eliminar(c.num)"></button>
+        </div>
+    </article>
+    <br>
+    <!--formulario de posteos-->
+
+    <article class="media">
+        <figure class="media-left">
+            <p class="image is-64x64">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/9/99/Sample_User_Icon.png">
+            </p>
+        </figure>
+        <div class="media-content">
+            <div class="field">
+                <div class="control is-loading">
+                    <input class="input" type="text" [(ngModel)] = "nombre" (ngModelChange) = "nombre = $event" placeholder="Nombre">
+                </div>
+            </div>
+            <div class="field">
+                <p class="control">
+                    <textarea class="textarea" [(ngModel)] = "comentario" (ngModelChange) = "comentario = $event" placeholder="Agrega un comentario..."></textarea>
+                </p>
+            </div>
+            <nav class="level">
+                <div class="level-left">
+                    <div class="level-item">
+                        <a class="button is-info sed-button" (click)="agregarComentario()">Enviar</a>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </article>
+</div>

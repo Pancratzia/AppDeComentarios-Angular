@@ -1,0 +1,12 @@
+.send-button{
+    background-color: #5a0456;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    border: 2px solid #5a0456;
+    transition: all 0.3s ease-in-out;
+
+}
+.send-button:hover{
+    background-color: #81247d;
+}
